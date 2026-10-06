@@ -56,6 +56,9 @@ They are similar, not identical. `/branch` isn't a shipped skill here; `/handoff
 **When does something belong in `CLAUDE.md` instead?**
 Ask whether it's true next month. `CLAUDE.md` is standing context about the project, loaded into every session whether it's relevant or not. A handoff is about one piece of work in flight and is useless once that work lands. If you keep re-explaining a fact, it belongs in `CLAUDE.md`. A half-finished task belongs in a handoff.
 
+**What if my managed worktree belongs to another chat?**
+The handoff carries the app's exact attachment identity and checkout path, the owning chat when known, and the current branch and commit. It also points to the externally preserved evidence and the original checkout's work in progress. That gives the next agent enough information to find the archive route before it reaches cleanup. When ownership is unavailable, the document says unknown. Archiving still follows the app's ownership checks and the repository's cleanup procedure. Sending another chat a cleanup request requires explicit authorization, which the document records separately from permission to work on the code.
+
 **It captures the what, not the why.**
 This is a fair criticism, and people raise it often. Two things help. Pass the argument (tell it what the next session is for), so the skill keeps the reasoning that bears on *that* rather than flattening it. And watch for confident claims the session never verified, such as "X isn't built" or "Y is done". The next agent trusts the document and does not re-check it, so a belief written as a fact becomes a false premise for everything that follows. Read the document before you hand it over, and downgrade anything you only assumed.
 
@@ -70,6 +73,7 @@ Both work; they suit different situations. As a skill, it ships and updates thro
 - In the fork case, your original session is unchanged when you come back to it.
 - The suggested-skills section names the skill you'd have reached for yourself.
 - Nothing in it is a key, a token, or a password.
+- A managed worktree's ownership, retained evidence and archive route are visible beside the remaining delivery work.
 
 ## Where it fits
 
